@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h3>Tambah Artikel</h3>
+	<form method="POST">
+		{% csrf_token %}
+
+		<div class="form-group">
+			<label for="{{form.content.id_for_label}}">
+			{{form.media}}
+			{{form.as_p}}:
+			</label>
+		</div>
+		<p>
+		<button type="submit" class="btn btn-primary">Tambah</button>
+		<a class="btn btn-primary" href="{% url 'index' %}">Batal</a></p>
+	</form>
+</body>
+</html>

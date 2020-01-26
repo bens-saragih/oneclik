@@ -1,0 +1,27 @@
+    <nav class="navbar px-md-0 navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="{% url 'index' %}">One<i>Clik</i>.</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item active"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="{% url 'blog:list' 1 %}" class="nav-link">Artikel</a></li>
+            {% if user.is_authenticated %}
+              <li class="nav-item"><a href="{% url 'account:view_profile' %}" class="nav-link">Profile</a></li>           
+              <li class="nav-item"><a href="{% url 'blog:create' %}" class="nav-link">Penulis</a></li>
+              <li class="nav-item"><a href="{% url 'blog:manage' %}" class="nav-link">Editor</a></li>
+              <li class="nav-item"><a href="{% url 'account:password_change' %}" class="nav-link">Ubah Password</a></li>
+              <li class="nav-item"><a href="contact.html" class="nav-link">Lupa Password ?</a></li> 
+              <li class="nav-item"><a href="{% url 'account:logout' %}" class="nav-link">Logout</a></li>
+            {% else %}
+              <li class="nav-item"><a href="{% url 'account:login' %}" class="nav-link">Login</a></li>
+              <li class="nav-item"><a href="contact.html" class="nav-link">Lupa Password ?</a></li>  
+              <li class="nav-item"><a href="{% url 'account:signup' %}" class="nav-link">Daftar</a></li> 
+            {% endif %}   
+          </ul>
+	      </div>
+	    </div>
+	  </nav>
