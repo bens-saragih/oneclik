@@ -24,15 +24,10 @@ class UserUpdateForm(forms.ModelForm):
         fields = ['username', 'email']
 
 class UserEdit(forms.ModelForm):
-    GENDER = (
-        ('P','pria'),
-        ('W','wanita')
-        )
-    gender = forms.ChoiceField(widget=forms.RadioSelect,choices=GENDER)
     class Meta:
 
         model = UserProfile
-        fields = ['city','website','description','phone','gender']
+        fields = ['city','website','description','phone']
 
 
     #jenis_kelamin = forms.ChoiceField(widget=forms.RadioSelect,choices=GENDER)

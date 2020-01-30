@@ -39,6 +39,7 @@ class ArtikelManageView(UserPassesTestMixin,ListView):
 	template_name = 'blog/artikel_manage.html'
 	context_object_name = 'artikel_list'
 	raise_exception = True
+	permission_denied_message = 'oke'
 
 	def test_func(self):
 	    return self.request.user.groups.filter(name='Editor').exists() 

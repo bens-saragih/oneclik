@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Promoted</title>
+	    {% include "style.html" %}
+
+
+</head>
+<body>
+{% include "navbar.html" %}
+
+    <div class="hero-wrap js-fullheight" style="background-image: url(#);" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
+          <div class="col-md-12 ftco-animate">
+          	<h2 class="subheading">Hallo!,Selamat Datang di</h2>
+          	<h1 class="mb-4 mb-md-0">One Click Position</h1>
+          	<div class="row">
+          		<div class="col-md-7">
+          			<div class="text">
+	          			<p>Ingin mendapatkan Jabatan dan gabung di Group, saat ini kita mempunya dua gruop yaitu Penulis dan Editor<br>
+	          				  {% for i in a %}
+						      Saat ini anda tergabung di gruop : {{i}}
+						      {% endfor %}<br>
+						      Jika ingin bergabung silakan hubungi admin melalui telegram
+						      <li><a href="https://t.me/bensweb"><span class="icon icon-phone"></span><span class="text">Telegram </span></a></li>
+						      </p>
+	          			<div class="mouse">
+										<a href="#" class="mouse-icon">
+											<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
+										</a>
+									</div>
+								</div>
+          		</div>
+          	</div>
+          </div>
+        </div>
+      </div>
+
+
+{% include "scripts.html" %}
+</body>
+</html>

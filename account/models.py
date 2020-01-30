@@ -11,11 +11,7 @@ class UserProfile(models.Model):
 	website = models.URLField(default='',null=True,blank=True)
 	phone = models.IntegerField(default=62,null=True,blank=True)
 	image = models.ImageField(upload_to='profile_image',blank=True,null=True)
-	gender_list = (
-		('Pria','Pria'),
-		('Wanita','Wanita')
-		)       
-	gender = models.CharField(max_length=20,choices=gender_list)
+
 	
 	def __str__(self):
 		return "{}".format(self.user.username)	

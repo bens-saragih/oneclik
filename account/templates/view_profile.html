@@ -20,8 +20,9 @@
       </div>
     </section>
 <div class="row" style="margin-top: 20px">
-<div class="container">
-    <p>Username:{{user}}</p>
+  <div class="container">
+  <h3>Profile</h3>
+  <p>Username:{{user}}</p>
   <p>First name : {{user.first_name}}</p>
   <p>Last name : {{user.last_name}}</p>
   <p>email : {{user.email}}</p>
@@ -29,17 +30,17 @@
   <p>Kota: {{user.userprofile.city}}</p>
   <p>Phone: {{user.userprofile.phone}}</p>
   <p>Website: {{user.userprofile.website}}</p>
-  <p>gender: {{user.userprofile.gender}}</p>
   <img src="{{ user.userprofile.get_photo_url }}" width="240">
       <div class="content-section">
-
       <form method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           <fieldset class="form-group">
-              <legend class="border-bottom mb-4">Upadte Profile</legend>
-              {{ p_form|crispy }}
-              {{ e_form|crispy }}
+              <legend class="border-bottom mb-4">Ubah Foto</legend>
               {{ u_form|crispy }}
+              {{ p_form|crispy }}
+              {{e_form|crispy}}
+
+
           </fieldset>
           <div class="form-group">
               <button class="btn btn-outline-info" type="submit">Update</button>
@@ -48,7 +49,6 @@
 
   </div>
   </div>
-
 </div>
 {% include 'scripts.html' %}
 </body>

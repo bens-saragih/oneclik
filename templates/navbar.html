@@ -11,11 +11,28 @@
               <li class="nav-item"><a href="{% url 'blog:list' 1 %}" class="nav-link">Artikel</a></li>
             {% if user.is_authenticated %}
               <li class="nav-item"><a href="{% url 'account:view_profile' %}" class="nav-link">Profile</a></li>           
-              <li class="nav-item"><a href="{% url 'blog:create' %}" class="nav-link">Penulis</a></li>
-              <li class="nav-item"><a href="{% url 'blog:manage' %}" class="nav-link">Editor</a></li>
-              <li class="nav-item"><a href="{% url 'account:password_change' %}" class="nav-link">Ubah Password</a></li>
-              <li class="nav-item"><a href="contact.html" class="nav-link">Lupa Password ?</a></li> 
-              <li class="nav-item"><a href="{% url 'account:logout' %}" class="nav-link">Logout</a></li>
+              <!-- Position -->
+              <div class="btn-group">
+                <button type="button" class="btn btn-success"><a href="{% url 'promoted' %}">Postition</a></button>
+                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="{% url 'blog:create' %}">Penulis</a>
+                  <a class="dropdown-item" href="{% url 'blog:manage' %}">Editor</a>
+              </div><br>
+              <br>
+              <!-- account -->
+              <div class="btn-group">
+                <button type="button" class="btn btn-info">Akun</button>
+                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="{% url 'account:password_change' %}">Ubah Pass</a>
+                  <a class="dropdown-item" href="{% url 'account:password_reset_view' %}">Lupa Pass</a>
+                  <a class="dropdown-item" href="{% url 'account:logout' %}">Keluar</a>
+              </div>
             {% else %}
               <li class="nav-item"><a href="{% url 'account:login' %}" class="nav-link">Login</a></li>
               <li class="nav-item"><a href="contact.html" class="nav-link">Lupa Password ?</a></li>  

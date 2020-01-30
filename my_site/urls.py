@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^ckeditor/',include('ckeditor_uploader.urls')),
     url(r'^$',views.index.as_view(),name='index'),
     url(r'^account/',include('account.urls',namespace='account')),
+    url(r'^promoted',views.PromotedIndex,name='promoted'),
  
 ]
 if settings.DEBUG:
